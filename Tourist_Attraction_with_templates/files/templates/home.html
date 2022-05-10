@@ -1,0 +1,24 @@
+{% extends "tourist_attractions/templates/tourist_attaractions/home.html" %}
+{% load static %}
+
+{% block head%}
+<link rel="stylesheet" href="{% static 'static/tourist_attraction/style.css' %}">
+{% endblock%}
+
+{% block content%}
+<h1>This is a list of attractions in America!</h1>
+<table>
+  <tr>
+    {{% for placeholder in list|dictsort:"argument" %}
+    <tr>
+    <td>{{ item.attraction_name }}</td>
+    <td>{{ item.state }}</td>
+    <td>{{<a href="{% url 'details' arg1|statename %}">State Details</a>}}</td>
+    </tr>
+   {% endfor %}
+    <th>Attraction</th>
+    <th>State</th>
+    <th>State details</th>
+  </tr>
+</table>
+{% endblock%}
