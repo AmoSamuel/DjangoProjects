@@ -2,19 +2,16 @@
 import sqlite3
 
 
-# Task 1: Create connection object
  con = sqlite3.connect("hotel_booking.db")
 
-# Task 2: Create cursor object
 
 cur = con.cursor()
-# Task 3: View first row of booking_summary
+
 
 print(cur.execute('''SELECT * FROM booking_summary''').fetchone())
-# Task 4: View first ten rows of booking_summary 
+
 print(cur.execute('''SELECT * FROM booking_summary''').fetchmany(10))
 
-# Task 5: Create object bra and print first 5 rows to view data
 
 ('''SELECT * FROM booking_summary WHERE country = 'BRA';''')
 # Task 6: Create new table called bra_customers
